@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html style="--newtab-background-color: rgb(33, 3, 64); --newtab-text-primary-color: rgba(255, 255, 255, 1); --sidebar-background-color: rgb(44, 16, 74); --sidebar-text-color: rgba(255, 255, 255, 1); --lwt-sidebar-highlight-background-color: rgba(61, 124, 153, 1); background-color: black;" lwt-newtab="" lwt-newtab-brighttext="" lwt-sidebar="dark" lwt-sidebar-highlight="">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+#ceebug-portfolio {
+    --background: #0f1117;
+    --surface: #171a22;
+    --surface-hover: #1d212b;
+    --text: #f4f6fb;
+    --secondary-text: #a8afbd;
+    --border: #2b303c;
+    --accent: #73a7ff;
+
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+#ceebug-portfolio header {
+    padding: 40px 0 60px;
+}
+
+#ceebug-portfolio header > div {
+    margin-bottom: 14px;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+#ceebug-portfolio h1 {
+    margin: 0;
+    font-size: clamp(42px, 8vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+#ceebug-portfolio p {
+    color: var(--secondary-text);
+    line-height: 1.6;
+}
+
+#ceebug-portfolio header p {
+    max-width: 650px;
+    margin: 22px 0 26px;
+    font-size: 18px;
+}
+
+#ceebug-portfolio a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+#ceebug-portfolio header a {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 11px 16px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    transition: 0.2s;
+}
+
+#ceebug-portfolio header a:first-of-type {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: #10141c;
+    font-weight: 700;
+}
+
+#ceebug-portfolio header a:hover {
+    background: var(--surface-hover);
+}
+
+#ceebug-portfolio header a:first-of-type:hover {
+    background: var(--accent);
+}
+
+#ceebug-portfolio section {
+    margin-top: 36px;
+}
+
+#ceebug-portfolio h2 {
+    margin: 0 0 14px;
+    font-size: 26px;
+    letter-spacing: -0.02em;
+}
+
+#ceebug-portfolio article {
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    transition: 0.2s;
+}
+
+#ceebug-portfolio article:hover {
+    background: var(--surface-hover);
+}
+
+a:not(.null):hover {
+	color: #8eb8ff !important;
+}
+.null:hover {
+	background-color: #8eb8ff !important;
+}
+
+h2:target {
+    color: var(--accent);
+}
+#ceebug-portfolio article h3 {
+    margin: 0 0 8px;
+    font-size: 21px;
+}
+
+#ceebug-portfolio article p {
+    margin: 0;
+}
+
+#ceebug-portfolio article > div,
+#ceebug-portfolio section:nth-of-type(2) > div {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+#ceebug-portfolio span {
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface-hover);
+    color: var(--secondary-text);
+    font-size: 13px;
+}
+
+#ceebug-portfolio article a {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+#ceebug-portfolio #links {
+    padding-bottom: 30px;
+}
+
+#ceebug-portfolio #links > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#ceebug-portfolio #links a {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    transition: 0.2s;
+}
+
+#ceebug-portfolio #links a:hover {
+    border-color: var(--accent);
+    background: var(--surface-hover);
+}
+
+#ceebug-portfolio footer {
+    margin-top: 42px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    #ceebug-portfolio {
+        padding: 24px 16px;
+    }
+
+    #ceebug-portfolio header {
+        padding: 28px 0 42px;
+    }
+	
+	#projects {
+		flex-wrap: wrap;
+	}
+	
+    #ceebug-portfolio header a {
+        margin-bottom: 8px;
+    }
+}
+#projects:target {
+transform: translateY(-3px);
+  border: 1px solid rgba(115, 167, 255, 0.75) !important;
+  z-index: 1;
+  box-shadow: inset 0 0 4px rgba(55, 115, 255, 0.9), inset 0 0 9px rgba(55, 115, 255, 0.45), 0 0 4px rgba(115, 167, 255, 0.55), 0 0 11px rgba(70, 130, 255, 0.55), 0 0 24px rgba(55, 110, 255, 0.28), 0 12px 40px rgba(0, 0, 0, 0.28);
+  animation: ceedoku-focus-pulse 1.5s ease-in-out infinite alternate;
+}
+@keyframes ceedoku-focus-pulse {
+    from {
+        box-shadow:
+            inset 0 0 3px rgba(55, 115, 255, 0.75),
+            inset 0 0 7px rgba(55, 115, 255, 0.35),
+
+            0 0 3px rgba(115, 167, 255, 0.45),
+            0 0 9px rgba(70, 130, 255, 0.42),
+            0 0 19px rgba(55, 110, 255, 0.20),
+
+            0 12px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    to {
+        box-shadow:
+            inset 0 0 5px rgba(55, 115, 255, 0.95),
+            inset 0 0 10px rgba(55, 115, 255, 0.50),
+
+            0 0 5px rgba(115, 167, 255, 0.65),
+            0 0 12px rgba(70, 130, 255, 0.62),
+            0 0 27px rgba(55, 110, 255, 0.32),
+
+            0 12px 40px rgba(0, 0, 0, 0.28);
+    }
+}
+	</style>
+	<link rel="icon" href="./favicon.png">
+</head>
+<body class="activity-stream"><div id="ceebug-portfolio">
+    <header>
+        <div>Developer • Creator • Builder</div>
+        <div style="display: flex;gap: 10px;"><img src="./icon.png" style="height: 100px;"><h1 style="color: var(--text);text-transform: none;line-height: unset;">Hey, I'm Ceebug.</h1></div>
+        <p>
+			I build things for the web, experiment with code, and occasionally turn an idea into a full project. Here's some of what I've made.
+		</p>
+		<div style="width: 100%;display: flex;gap: 10px;margin-bottom: 0px">
+			<a class="null" href="#projects" style="text-transform: initial;letter-spacing: normal;width: 50%;margin-right: 0px;text-align: center;max-width: 120px;">View my projects</a>
+			<a href="#links" style="text-transform: initial;letter-spacing: normal;width: 50%;margin-right: 0px;text-align: center;max-width: 120px;">Find me online</a>
+		</div>
+    </header>
+	
+	<section style="margin-top:0px">
+		<h2>About me</h2>
+		
+		<article>
+			<p>
+				I'm a developer who enjoys building things for the web and experimenting with new ideas.
+				I work primarily with HTML, CSS and JavaScript, and I enjoy turning ideas into working projects.
+			</p>
+		</article>
+	</section>
+	
+    <section>
+        <h2>Projects</h2>
+        <div id="projects" style="border-radius: 16px;display: flex;gap: 10px;">
+			<article>
+				<h3>Ceedoku</h3>
+				<p>
+					A free, lightweight Sudoku game built with HTML, CSS and JavaScript.
+				</p>
+				<div>
+					<span>HTML</span>
+					<span>CSS</span>
+					<span>JavaScript</span>
+					<span>Electron</span>
+				</div>
+				<div style="gap: 0px;">
+					<a href="https://ceedoku.github.io/">Open Ceedoku</a>
+					<a href="https://github.com/Ceebug/Ceedoku" style="margin-left: auto;">View repository</a>
+				</div>
+			</article>
+		
+			<article>
+				<h3>JSF</h3>
+				<p>
+					A lightweight JavaScript based parser for 
+					<a href="ceedoku.github.io/csfspec" style="display: unset;">Ceedoku Save Format (.CSF)</a> 
+					files.
+				</p>
+				<div>
+					<span>JavaScript</span>
+				</div>
+				<a href="https://github.com/Ceebug/JSF">View repository</a>
+			</article>
+		
+			<article>
+				<h3>FSJ</h3>
+				<p>
+					A lightweight JavaScript based serialiser for 
+					<a href="ceedoku.github.io/csfspec" style="display: unset;">Ceedoku Save Format (.CSF)</a> 
+					files.
+				</p>
+				<div>
+					<span>JavaScript</span>               
+				</div>
+				<a href="https://github.com/Ceebug/FSJ" style="margin-left: 10px;">View repository</a>
+			</article>
+		</div>
+    </section>
+	
+    <section>
+        <h2>What I work with</h2>
+
+        <div style="display: flex;flex-wrap: wrap;gap: 5px;">
+            <span>JavaScript</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>Electron</span>
+        </div>
+    </section>
+
+    <section>
+        <h2 id="links" style="padding-bottom: 0px;">Find me online</h2>
+		<div style="display: flex;flex-wrap: wrap;gap: 5px;">
+			<a style="padding: 10px;background-color: var(--surface);border-radius: 10px;border: 1px solid var(--border);margin-right: 5px;" href="https://github.com/">GitHub</a>
+			<a style="padding: 10px;background-color: var(--surface);border-radius: 10px;border: 1px solid var(--border);margin-right: 5px;" href="https://www.patreon.com/">Patreon</a>
+			<a style="padding: 10px;background-color: var(--surface);border-radius: 10px;border: 1px solid var(--border);margin-right: 5px;" href="https://modrinth.com/">Modrinth</a>
+			<a style="padding: 10px;background-color: var(--surface);border-radius: 10px;border: 1px solid var(--border);margin-right: 5px;" href="https://www.spotify.com/">Spotify</a>
+			<a style="padding: 10px;background-color: var(--surface);border-radius: 10px;border: 1px solid var(--border);margin-right: 5px;" href="https://www.gravatar.com/">Gravatar</a>
+		</div>
+    </section>
+
+    <footer>
+        Built by Ceebug • ceebug.github.io
+    </footer>
+</div></body></html>
