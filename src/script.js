@@ -1,16 +1,17 @@
+```js
 // setup constant for a project name to link lookup table
 const projectDatabase = [
 	{ projectName: 'ceedoku', link: 'https://github.com/ceebug/ceedoku' },
-	{ projectName: 'jsf',   link: 'https://github.com/ceebug/jsf' },
+	{ projectName: 'jsf', link: 'https://github.com/ceebug/jsf' },
 	{ projectName: 'fsj', link: 'https://github.com/ceebug/fsj' }
-];		
+];
 
 // setup constants for the cards
 const ceedokuCard = document.getElementById("ceedokuCard");
 const jsfCard = document.getElementById("jsfCard");
 const fsjCard = document.getElementById("fsjCard");
 const linksHeading = document.getElementById("links");
-const linksCard = document.getElementById("linksCard")
+const linksCard = document.getElementById("linksCard");
 const projectsCard = document.getElementById("projects");
 const projectsButton = document.getElementById("projectsButton");
 const linksbutton = document.getElementById("linksButton");
@@ -21,10 +22,13 @@ function gotoProject(projectName) {
 	const match = projectDatabase.find(
 		(p) => p.projectName.toLowerCase() === projectName.toLowerCase()
 	);
-	
+
 	if (match) {
 		// if the project exists, open it in a new tab
 		window.open(match.link, '_blank', 'noopener,noreferrer');
+
+		// also change the current page to the project
+		window.location.href = match.link;
 	} else {
 		// if the project does not exist error out
 		console.warn(`Project was not in database, didn't update link`);
@@ -33,23 +37,28 @@ function gotoProject(projectName) {
 
 // add function to handle event listener calls
 function handleRelease(event, projectName) {
+	// don't interfere with links inside the card
+	if (event.target.closest("a")) return;
+
 	// prevent default event for cancelable events
 	if (event.cancelable) event.preventDefault();
-	
+
 	// make sure it was a left click if using a mouse
 	if (event.type === 'mouseup' && event.button !== 0) return;
-	
+
 	// checks passed
-	gotoProject(projectName)
+	gotoProject(projectName);
 }
 
 // add event listeners for each project card to make them open the project in a new tab
 // Ceedoku
 ceedokuCard.addEventListener('mouseup', (e) => handleRelease(e, "ceedoku"));
-ceedokuCard.addEventListener('touchend', (e) => handleRelease(e, "ceedoku"));	
+ceedokuCard.addEventListener('touchend', (e) => handleRelease(e, "ceedoku"));
+
 // JSF
 jsfCard.addEventListener('mouseup', (e) => handleRelease(e, "jsf"));
 jsfCard.addEventListener('touchend', (e) => handleRelease(e, "jsf"));
+
 // FSJ
 fsjCard.addEventListener('mouseup', (e) => handleRelease(e, "fsj"));
 fsjCard.addEventListener('touchend', (e) => handleRelease(e, "fsj"));
@@ -58,28 +67,28 @@ fsjCard.addEventListener('touchend', (e) => handleRelease(e, "fsj"));
 function checkHash() {
 	// get the hash if it exists
 	const hash = window.location.hash;
-	
+
 	// setup targetelementvar so js doesnt yell at me later
-	let targetElement = null
-	
+	let targetElement = null;
+
 	// check that there was a hash
 	if (hash) {
 		// check if the hash is equal to any of the two things that actually have focus styling
 		if (hash == "#links") {
 			// set target element to the links card
-			targetElement = linksCard
+			targetElement = linksCard;
 		} else if (hash == "#projects") {
 			// set target element to projects card
-			targetElement = projectsCard
+			targetElement = projectsCard;
 		}
-		
-		if (targetElement) {				
+
+		if (targetElement) {
 			// add listeners to check for user interaction
 			addListeners();
-			
+
 			// add the focus class to the target element
 			targetElement.classList.add("focus");
-			
+
 			// wait for the transition to finish
 			setTimeout(() => {
 				// add the animate class so the target element does its usual animation
@@ -92,13 +101,13 @@ function checkHash() {
 linksbutton.addEventListener('mouseup', (event) => {
 	// prevent default event for cancelable events
 	if (event.cancelable) event.preventDefault();
-	
+
 	// make sure it was a left click if using a mouse
 	if (event.button !== 0) return;
-	
+
 	// set the hash to links
 	window.location.hash = "#links";
-	
+
 	// checks passed
 	checkHash();
 });
@@ -106,10 +115,10 @@ linksbutton.addEventListener('mouseup', (event) => {
 linksbutton.addEventListener('touchend', (event) => {
 	// prevent default event for cancelable events
 	if (event.cancelable) event.preventDefault();
-	
+
 	// set the hash to links
 	window.location.hash = "#links";
-	
+
 	// checks passed
 	checkHash();
 });
@@ -117,13 +126,13 @@ linksbutton.addEventListener('touchend', (event) => {
 projectsButton.addEventListener('mouseup', (event) => {
 	// prevent default event for cancelable events
 	if (event.cancelable) event.preventDefault();
-	
+
 	// make sure it was a left click if using a mouse
 	if (event.button !== 0) return;
-	
+
 	// set the hash to projects
 	window.location.hash = "#projects";
-	
+
 	// checks passed
 	checkHash();
 });
@@ -131,10 +140,10 @@ projectsButton.addEventListener('mouseup', (event) => {
 projectsButton.addEventListener('touchend', (event) => {
 	// prevent default event for cancelable events
 	if (event.cancelable) event.preventDefault();
-	
+
 	// set the hash to projects
 	window.location.hash = "#projects";
-	
+
 	// checks passed
 	checkHash();
 });
@@ -148,7 +157,7 @@ function addListeners() {
 	window.addEventListener("contextmenu", removeFocus);
 	window.addEventListener("selectstart", removeFocus);
 	window.addEventListener("mousemove", removeFocus);
-};
+}
 
 // add listener to call checkhash on load
 document.addEventListener('DOMContentLoaded', () => {
@@ -160,11 +169,11 @@ function removeFocus() {
 	// remove element animation
 	linksCard.classList.remove("animate");
 	projectsCard.classList.remove("animate");
-	
+
 	// remove element focus
 	linksCard.classList.remove("focus");
 	projectsCard.classList.remove("focus");
-	
+
 	// remove the event listeners since we dont need them anymore
 	window.removeEventListener("pointerdown", removeFocus);
 	window.removeEventListener("wheel", removeFocus);
@@ -174,3 +183,4 @@ function removeFocus() {
 	window.removeEventListener("selectstart", removeFocus);
 	window.removeEventListener("mousemove", removeFocus);
 }
+```
