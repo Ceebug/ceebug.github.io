@@ -25,9 +25,6 @@ function gotoProject(projectName) {
 	if (match) {
 		// if the project exists, open it in a new tab
 		window.open(match.link, '_blank', 'noopener,noreferrer');
-
-		// also change the current page to the project
-		window.location.href = match.link;
 	} else {
 		// if the project does not exist error out
 		console.warn(`Project was not in database, didn't update link`);
