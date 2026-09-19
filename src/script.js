@@ -51,16 +51,43 @@ function handleRelease(event, projectName) {
 
 // add event listeners for each project card to make them open the project in a new tab
 // Ceedoku
-ceedokuCard.addEventListener('mouseup', (e) => handleRelease(e, "ceedoku"));
-ceedokuCard.addEventListener('touchend', (e) => handleRelease(e, "ceedoku"));
+ceedokuCard.addEventListener('mouseup', (e) => {
+	if (!e.target.closest('a')) {
+		handleRelease(e, "ceedoku");
+	}
+});
+
+ceedokuCard.addEventListener('touchend', (e) => {
+	if (!e.target.closest('a')) {
+		handleRelease(e, "ceedoku");
+	}
+});
 
 // JSF
-jsfCard.addEventListener('mouseup', (e) => handleRelease(e, "jsf"));
-jsfCard.addEventListener('touchend', (e) => handleRelease(e, "jsf"));
+jsfCard.addEventListener('mouseup', (e) => {
+	if (!e.target.closest('a')) {
+		handleRelease(e, "jsf");
+	}
+});
+
+jsfCard.addEventListener('touchend', (e) => {
+	if (!e.target.closest('a')) {
+		handleRelease(e, "jsf");
+	}
+});
 
 // FSJ
-fsjCard.addEventListener('mouseup', (e) => handleRelease(e, "fsj"));
-fsjCard.addEventListener('touchend', (e) => handleRelease(e, "fsj"));
+fsjCard.addEventListener('mouseup', (e) => {
+	if (!e.target.closest('a')) {
+		handleRelease(e, "fsj");
+	}
+});
+
+fsjCard.addEventListener('touchend', (e) => {
+	if (!e.target.closest('a')) {
+		handleRelease(e, "fsj");
+	}
+});
 
 // add function to deal with hash at end of url
 function checkHash() {
