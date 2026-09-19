@@ -1,4 +1,3 @@
-```js
 // setup constant for a project name to link lookup table
 const projectDatabase = [
 	{ projectName: 'ceedoku', link: 'https://github.com/ceebug/ceedoku' },
@@ -183,4 +182,3 @@ function removeFocus() {
 	window.removeEventListener("selectstart", removeFocus);
 	window.removeEventListener("mousemove", removeFocus);
 }
-```
