@@ -169,6 +169,7 @@ h2.focus {
 #ceebug-portfolio #linksCard a.github:hover {
 	border-color: #0FBF3E;
 	color: #0FBF3E !important;
+	cursor: pointer
 }
 
 a.patreon:hover {
