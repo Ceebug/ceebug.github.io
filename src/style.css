@@ -263,6 +263,11 @@ div.focus.animate {
 	font-size: 13px;
 }
 
+a.discord:hover {
+	border-color: #5865F2 !important;
+	color: #5865F2 !important;
+}
+
 @keyframes focus-pulse {
 	0% {
 		box-shadow:
