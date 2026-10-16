@@ -2,13 +2,19 @@
 const projectDatabase = [
 	{ projectName: 'ceedoku', link: 'https://github.com/ceebug/ceedoku' },
 	{ projectName: 'jsf', link: 'https://github.com/ceebug/jsf' },
-	{ projectName: 'fsj', link: 'https://github.com/ceebug/fsj' }
+	{ projectName: 'fsj', link: 'https://github.com/ceebug/fsj' },
+	{ projectName: 'nicenav', link: 'https://github.com/Ceebug/nicenav' },
+	{ projectName: 'nicetabs', link: 'https://github.com/Ceebug/nicetabs' },
+	{ projectName: 'nicetoolbar', link: 'https://github.com/Ceebug/nicetoolbar' }
 ];
 
 // setup constants for the cards
 const ceedokuCard = document.getElementById("ceedokuCard");
 const jsfCard = document.getElementById("jsfCard");
 const fsjCard = document.getElementById("fsjCard");
+const niceNavCard = document.getElementById("niceNavCard");
+const niceTabsCard = document.getElementById("niceTabsCard");
+const niceToolbarCard = document.getElementById("niceToolbarCard");
 const linksHeading = document.getElementById("links");
 const linksCard = document.getElementById("linksCard");
 const projectsCard = document.getElementById("projects");
@@ -83,6 +89,45 @@ fsjCard.addEventListener('mouseup', (e) => {
 fsjCard.addEventListener('touchend', (e) => {
 	if (!e.target.closest('a')) {
 		handleRelease(e, "fsj");
+	}
+});
+
+// NiceNav
+niceNavCard.addEventListener('mouseup', (e) => {
+	if (!e.target.closest('a')) {
+		handleRelease(e, "nicenav");
+	}
+});
+
+niceNavCard.addEventListener('touchend', (e) => {
+	if (!e.target.closest('a')) {
+		handleRelease(e, "nicenav");
+	}
+});
+
+// NiceTabs
+niceTabsCard.addEventListener('mouseup', (e) => {
+	if (!e.target.closest('a')) {
+		handleRelease(e, "nicetabs");
+	}
+});
+
+niceTabsCard.addEventListener('touchend', (e) => {
+	if (!e.target.closest('a')) {
+		handleRelease(e, "nicetabs");
+	}
+});
+
+// NiceToolbar
+niceToolbarCard.addEventListener('mouseup', (e) => {
+	if (!e.target.closest('a')) {
+		handleRelease(e, "nicetoolbar");
+	}
+});
+
+niceToolbarCard.addEventListener('touchend', (e) => {
+	if (!e.target.closest('a')) {
+		handleRelease(e, "nicetoolbar");
 	}
 });
 
