@@ -435,11 +435,13 @@ body {
 	cursor: pointer;
 }
 
+
 .projectscard {
 	padding: 8px;
 	background-color: var(--background);
 	border: 1px solid var(--border);
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: 10px;
 	border-radius: 24px;
 	transition: 0.2s ease;
@@ -447,7 +449,7 @@ body {
 
 .project {
 	border-radius: 16px !important;
-	width: 33.3%;
+	min-width: 0;
 	display: flex;
 	flex-direction: column;
 }
@@ -468,10 +470,6 @@ body {
 		padding: 28px 0 42px;
 	}
 	
-	.mobilewraponly {
-		flex-wrap: wrap;
-	}
-	
 	#ceebug-portfolio header a {
 		margin-bottom: 8px;
 	}
@@ -480,11 +478,8 @@ body {
 		max-width: unset !important;
 	}
 	
-	.project {
-		width: unset;
-	}
-	
 	.projectscard {
-		flex-direction: column;
+		grid-template-columns: 1fr;
 	}
+
 }
