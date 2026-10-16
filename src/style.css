@@ -401,10 +401,6 @@ body {
 	width: 100%;
 }
 
-.mobilewraponly {
-	flex-wrap: nowrap
-}
-
 .flexydoublegap > article {
 	flex: 1 1 0px;
 	display: flex;
